@@ -1,33 +1,49 @@
 package org.example;
 
-public class MoodAnalyser
-{
+public class MoodAnalyser {
     private String message;
 
+    public MoodAnalyser() {
+        message = "happy";
 
-        public String analyseMood(String message)
+    }
 
-        {
-            if(message.toLowerCase().contains("any"))
-            {
 
-                return "Happy";
-            }
+    public MoodAnalyser(String message) {
+        this.message = message;
+    }
 
-            if(message.toLowerCase().contains("sad"))
-            {
+    public String analyseMood() {
 
-                return "sad";
-            }
+        if (message == null || message.isEmpty()) {
+            return "Happy";
+        }
 
-            if(message.toLowerCase().contains("happy"))
-            {
+        if (message.toLowerCase().contains("any")) {
 
-                return "Happy";
-            }
+            return "Happy";
+        }
+
+        if (message.toLowerCase().contains("sad")) {
+
+            return "sad";
+        } else {
 
             return "Happy";
 
+        }
+
 
     }
+
+
+
+    public static void main(String a[])
+    {
+        MoodAnalyser ma = new MoodAnalyser();
+        System.out.println(ma.analyseMood());
+
+
+    }
+
 }
