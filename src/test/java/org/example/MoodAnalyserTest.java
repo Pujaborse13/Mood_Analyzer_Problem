@@ -7,7 +7,7 @@ import static junit.framework.Assert.assertEquals;
 public class MoodAnalyserTest {
 
     @Test
-    void givenNoMessageInDefaultConstructor_ShouldReturnHappy() {
+    void givenNoMessageInDefaultConstructor_ShouldReturnHappy() throws MoodAnalyserException {
         MoodAnalyser moodAnalyser = new MoodAnalyser("I am In Sad Mood");
 
         String result = moodAnalyser.analyseMood();
@@ -15,8 +15,9 @@ public class MoodAnalyserTest {
     }
 
     @Test
-    void givenNullMessage_ShouldReturnHappy() {
-        MoodAnalyser moodAnalyser = new MoodAnalyser();
+    void givenNullMessage_ShouldReturnHappy() throws MoodAnalyserException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+
 
         String result = moodAnalyser.analyseMood();
         assertEquals("Happy", result);
@@ -24,7 +25,7 @@ public class MoodAnalyserTest {
     }
 
        @Test
-        void givenSadMessageConstructor_ShouldReturnSad() {
+        void givenSadMessageConstructor_ShouldReturnSad() throws MoodAnalyserException {
             MoodAnalyser moodAnalyser = new MoodAnalyser("I am In Sad Mood");
 
             String result = moodAnalyser.analyseMood();
@@ -34,7 +35,7 @@ public class MoodAnalyserTest {
 
 
     @Test
-    void givenHappyMessageConstructor_ShouldReturnHappy() {
+    void givenHappyMessageConstructor_ShouldReturnHappy() throws MoodAnalyserException {
         MoodAnalyser moodAnalyser = new MoodAnalyser("I am In Happy Mood");
 
         String result = moodAnalyser.analyseMood();

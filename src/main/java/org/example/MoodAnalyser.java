@@ -14,37 +14,38 @@ public class MoodAnalyser {
                 }
 
 
-    public String analyseMood(String message) throws MoodAnalyserException {
-        if (message == null || message.isEmpty()) {
-            throw new MoodAnalyserException("Mood Can not be null");
-
-        }
-        if (message.toLowerCase().contains("sad")) {
-            return "sad";
-        }
-
-        if (message.toLowerCase().contains("happy")) {
-            return "happy";
-        } else {
-            throw new MoodAnalyserException("Invalid Mood");
-
-
-        }
-    }
-
-    public static void main(String a[]) {
-
-        MoodAnalyser ma = new MoodAnalyser();
+    public String analyseMood() throws MoodAnalyserException {
 
         try {
-            System.out.println(ma.analyseMood("786876"));
+            if (message == null || message.isEmpty()) {
+                return "Happy";
+            }
 
+            if (message.toLowerCase().contains("sad")) {
+                return "sad";
+            }
 
-        } catch (NullPointerException | MoodAnalyserException e) {
-            System.out.println("Exception : " + e.getMessage());
+            if (message.toLowerCase().contains("happy")) {
+                return "happy";
         }
+            else {
+            throw new MoodAnalyserException("Invalid Mood");
+             }
+        }
+  catch (NullPointerException e)
+  {
+      return "Happy";
+  }
+    }
+
+
+    public static void main(String a[]) throws MoodAnalyserException {
+
+        MoodAnalyser ma = new MoodAnalyser();
+        System.out.println(ma.analyseMood());
+
+    }
 
 
     }
-}
 
