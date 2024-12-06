@@ -6,9 +6,6 @@ import static junit.framework.Assert.assertEquals;
 
 public class MoodAnalyserTest {
 
-
-
-
     @Test
     void givenNoMessageInDefaultConstructor_ShouldReturnHappy() {
         MoodAnalyser moodAnalyser = new MoodAnalyser("I am In Sad Mood");
@@ -34,6 +31,16 @@ public class MoodAnalyserTest {
             assertEquals("sad", result);
 
         }
+
+
+    @Test
+    void givenHappyMessageConstructor_ShouldReturnHappy() {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am In Happy Mood");
+
+        String result = moodAnalyser.analyseMood();
+        assertEquals("Happy", result);
+
+    }
 
 
 }
