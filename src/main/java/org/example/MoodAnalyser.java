@@ -13,6 +13,7 @@ public class MoodAnalyser {
         this.message = message;
     }
 
+
     public String analyseMood() {
 
         if (message == null || message.isEmpty()) {
