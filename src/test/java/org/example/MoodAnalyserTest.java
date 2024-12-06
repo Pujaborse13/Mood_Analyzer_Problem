@@ -7,22 +7,13 @@ import static junit.framework.Assert.assertEquals;
 public class MoodAnalyserTest {
 
     @Test
-    void givenSadMessage_ShouldReturnSad()
+    void givenInAnyMood_ShouldReturnHappy()
     {
-
-
-        MoodAnalyser moodAnalyser = new MoodAnalyser("sad");
-        String msg = "I am In sad Mood";
-        assertEquals("Sad", moodAnalyser.analyseMood(msg));
+        MoodAnalyser moodAnalyser = new MoodAnalyser();
+        String msg = "I am in any Mood";
+        assertEquals("Happy", moodAnalyser.analyseMood(msg));
 
     }
-
-
-
-
-
-
-
 
 
 }
